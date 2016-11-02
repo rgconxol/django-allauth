@@ -404,6 +404,7 @@ class DefaultAccountAdapter(object):
         activate_url = self.get_email_confirmation_url(
             request,
             emailconfirmation)
+        activate_url = activate_url[:-1]
         ctx = {
             "user": emailconfirmation.email_address.user,
             "activate_url": activate_url,
